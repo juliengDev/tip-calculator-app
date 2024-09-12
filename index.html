@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./css/style.css">
+  <script type="module" defer src="/src/main.ts"></script>
+
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
 
@@ -33,8 +35,11 @@
             <li><button class="calculator__input__selection__pourcentage btn">15%</button></li>
             <li><button class="calculator__input__selection__pourcentage btn">25%</button></li>
             <li><button class="calculator__input__selection__pourcentage btn">50%</button></li>
-            <li><button
-                class="calculator__input__selection__pourcentage calculator__input__selection__pourcentage-custom btn">Custom</button>
+            <li><button class="btn">
+                <input
+                  class="calculator__input__selection__pourcentage calculator__input__selection__pourcentage-custom"
+                  id="custom" type="number" placeholder="Custom" min="0">
+              </button>
             </li>
           </ul>
         </div>
@@ -53,31 +58,36 @@
       </div>
       </div>
       <div class="calculator__result">
-        <div class="calculator__result__amount">
-          <div class="calculator__result__amount__title ">
-            <h3>Tip Amount</h3>
-            <p>/ person</p>
+        <div class="calculator__result__amount__container">
+          <div class="calculator__result__amount">
+
+            <div class="calculator__result__amount__title ">
+              <h3>Tip Amount</h3>
+              <p>/ person</p>
+            </div>
+            <div id="tip-per-person" class="calculator__result__amount__number">
+              $4.27
+            </div>
+
           </div>
-          <div class="calculator__result__amount__number">
-            $4.27
+          <div class="calculator__result__amount">
+            <div class="calculator__result__amount__title">
+              <h3>Total</h3>
+              <p>/ person</p>
+            </div>
+            <div id="total-per-person" class="calculator__result__amount__number">
+              $32.79
+            </div>
           </div>
         </div>
-        <div class="calculator__result__amount">
-          <div class="calculator__result__amount__title">
-            <h3>Total</h3>
-            <p>/ person</p>
-          </div>
-          <div class="calculator__result__amount__number">
-            $32.79
-          </div>
-        </div>
+
         <button class="calculator__result__button btn">Reset</button>
       </div>
     </section>
   </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Julien Gilbert</a>.
   </div>
 </body>
 

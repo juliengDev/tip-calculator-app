@@ -27,6 +27,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   --color-William: #3d6666;
   --color-CuttyStark-2: #547878;
   --color-JaggedIce: #c5e4e7;
+  --color-Atoll: #0d686d;
   --color-pure-white: #ffffff;
 }
 
@@ -64,6 +65,10 @@ ol {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 .btn {
@@ -185,9 +190,15 @@ input {
   margin-top: 2rem;
 }
 
+.selected {
+  background-color: var(--color-Java) !important;
+  color: var(--color-SherpaBlue) !important;
+}
+
 .calculator {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 3.2rem;
   padding: 3.2rem;
   background-color: var(--color-pure-white);
@@ -199,13 +210,19 @@ input {
   .calculator {
     max-width: 92rem;
     flex-direction: row;
+    border-radius: 25px;
+    padding: 4.8rem;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .calculator__input {
+    max-width: 37.9rem;
   }
 }
 .calculator__input__number {
   margin-bottom: 3.2rem;
 }
 .calculator__input__number__bill__container {
-  width: max(31.1rem, 100%);
   position: relative;
 }
 .calculator__input__selection {
@@ -219,6 +236,12 @@ input {
   max-width: 31.1rem;
   margin: 0 auto;
 }
+@media only screen and (min-width: 56.25em) {
+  .calculator__input__selection__container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 37.9rem;
+  }
+}
 .calculator__input__selection__pourcentage {
   max-width: 14.6rem;
   width: 100%;
@@ -228,16 +251,22 @@ input {
   background-color: var(--color-SherpaBlue);
   color: var(--color-pure-white);
   border-radius: 5px;
+  padding: 0.6rem 0;
 }
 .calculator__input__selection__pourcentage-custom {
+  border: none;
   background-color: var(--color-BlackSqueeze);
   color: var(--color-CuttyStark-2);
 }
 .calculator__input__people__container {
-  width: max(31.1rem, 100%);
   position: relative;
 }
 .calculator__result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 43.1rem;
+  width: 100%;
   background-color: var(--color-SherpaBlue);
   color: var(--color-pure-white);
   padding: 2.4rem;
@@ -268,10 +297,14 @@ input {
   text-transform: uppercase;
   margin-top: 3.2rem;
   width: 100%;
-  background-color: var(--color-Java);
+  background-color: var(--color-Atoll);
   color: var(--color-SherpaBlue);
   padding: 0.9rem 0;
   border-radius: 5px;
+}
+.calculator__result__button:active, .calculator__result__button:hover {
+  background-color: var(--color-Java);
+  color: var(--color-SherpaBlue);
 }
 
 .header {
@@ -290,9 +323,9 @@ input {
   text-align: center;
   color: var(--color-wenge-brown);
 }
-.attribution__credit {
+.attribution a {
   font-weight: 800;
-  color: var(--color-dark-raspberry) !important;
+  color: var(--color-SherpaBlue) !important;
 }
 
 /*# sourceMappingURL=style.css.map */

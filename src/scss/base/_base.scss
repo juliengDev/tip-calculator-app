@@ -8,6 +8,7 @@
   --color-William: #3d6666;
   --color-CuttyStark-2: #547878;
   --color-JaggedIce: #c5e4e7;
+  --color-Atoll: #0d686d;
   --color-pure-white: #ffffff;
 }
 
@@ -43,6 +44,9 @@ ol {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+button {
+  cursor: pointer;
 }
 .btn {
   border: none;
