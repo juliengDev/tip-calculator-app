@@ -1,0 +1,97 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 3.2rem;
+  background-color: var(--color-pure-white);
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  max-width: 37.5rem;
+
+  @include respond(tab-port) {
+    max-width: 92rem;
+    flex-direction: row;
+  }
+
+  &__input {
+    &__number {
+      margin-bottom: 3.2rem;
+      &__bill {
+        &__container {
+          width: max(31.1rem, 100%);
+          position: relative;
+        }
+      }
+    }
+
+    &__selection {
+      margin-bottom: 3.2rem;
+      &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.7rem;
+        width: 100%;
+        max-width: 31.1rem;
+        margin: 0 auto;
+      }
+      &__pourcentage {
+        max-width: 14.6rem;
+        width: 100%;
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+        background-color: var(--color-SherpaBlue);
+        color: var(--color-pure-white);
+        border-radius: 5px;
+        &-custom {
+          background-color: var(--color-BlackSqueeze);
+          color: var(--color-CuttyStark-2);
+        }
+      }
+    }
+    &__people {
+      &__container {
+        width: max(31.1rem, 100%);
+        position: relative;
+      }
+    }
+  }
+  &__result {
+    background-color: var(--color-SherpaBlue);
+    color: var(--color-pure-white);
+    padding: 2.4rem;
+    border-radius: 15px;
+    &__amount {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      & + .calculator__result__amount {
+        margin-top: 2rem;
+      }
+      &__title {
+        & > h3 {
+          font-size: 1.6rem;
+        }
+        & > p {
+          font-size: 1.3rem;
+          color: var(--color-GrannySmith);
+        }
+      }
+      &__number {
+        font-size: 3.2rem;
+        color: var(--color-Java);
+      }
+    }
+    &__button {
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 3.2rem;
+      width: 100%;
+      background-color: var(--color-Java);
+      color: var(--color-SherpaBlue);
+      padding: 0.9rem 0;
+      border-radius: 5px;
+    }
+  }
+}

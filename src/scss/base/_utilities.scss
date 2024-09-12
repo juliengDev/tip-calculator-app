@@ -20,6 +20,7 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -33,4 +34,28 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.icon {
+  font-size: 2.4rem;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-TowerGray);
+}
+.input {
+  width: 100%;
+  padding: 0.6rem 1.7rem;
+  text-align: right;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--color-SherpaBlue);
+  background-color: var(--color-BlackSqueeze);
+  border: none;
+  border-radius: 5px;
+}
+
+.mb-bottom {
+  margin-top: 2rem;
 }

@@ -11,10 +11,20 @@
 	•	900 : Black (Heavy)
   
   */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-body {
-  font-family: "Verdana", sans-serif;
-  background-color: #fafafa;
+body,
+input {
+  font-family: "Space Mono", monospace;
+  background-color: var(--color-JaggedIce);
+  color: var(--color-William);
   font-weight: 400;
   line-height: 1.4;
+}
+
+.ft-body-title {
+  color: var(--color-CuttyStark);
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+  font-weight: 700;
 }

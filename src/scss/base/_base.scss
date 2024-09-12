@@ -1,11 +1,13 @@
 :root {
-  --color-dark-charcoal: #312e2c;
-  --color-dark-raspberry: #7a284e;
-  --color-brandy-red: #854632;
-  --color-wenge-brown: #5f564d;
-  --color-eggshell: #f3e5d7;
-  --color-white-coffee: #e3ddd7;
-  --color-snow: #fff7fb;
+  --color-SherpaBlue: #00474b;
+  --color-Java: #26c2ae;
+  --color-CuttyStark: #5e7a7d;
+  --color-TowerGray: #9ebbbd;
+  --color-BlackSqueeze: #f3f9fa;
+  --color-GrannySmith: #7f9d9f;
+  --color-William: #3d6666;
+  --color-CuttyStark-2: #547878;
+  --color-JaggedIce: #c5e4e7;
   --color-pure-white: #ffffff;
 }
 
@@ -36,6 +38,35 @@ a:active {
   cursor: auto; /* or pointer if you want to keep the default hand cursor */
 }
 
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
 /*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128

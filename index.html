@@ -1,44 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./css/style.css">
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+  <main class="container grid">
+    <header class="header">
+      <p>spli</p>
+      <p>tter</p>
+    </header>
+    <section class="calculator">
+      <div class="calculator__input">
+        <div class="calculator__input__number">
+          <label class="calculator__input__number__bill ft-body-title">Bill</label>
+          <div class="calculator__input__number__bill__container">
+            <span class="calculator__input__number__bill__container__icon icon">$</span>
+            <input class="calculator__input__number__bill__container__number input" type="number" id="bill"
+              placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="calculator__input__selection">
+          <h3 class="calculator__input__selection__title ft-body-title">Select Tip %</h3>
+          <ul class="calculator__input__selection__container">
+            <li><button class="calculator__input__selection__pourcentage btn">5%</button></li>
+            <li><button class="calculator__input__selection__pourcentage btn">10%</button></li>
+            <li><button class="calculator__input__selection__pourcentage btn">15%</button></li>
+            <li><button class="calculator__input__selection__pourcentage btn">25%</button></li>
+            <li><button class="calculator__input__selection__pourcentage btn">50%</button></li>
+            <li><button
+                class="calculator__input__selection__pourcentage calculator__input__selection__pourcentage-custom btn">Custom</button>
+            </li>
+          </ul>
+        </div>
+        <div class="calculator__input__people">
+          <label class="calculator__input__number__people ft-body-title">Number of People </label>
+          <div class="calculator__input__people__container">
+            <svg class="calculator__input__number__people__container icon " xmlns="http://www.w3.org/2000/svg"
+              width="13" height="16">
+              <path fill="#9EBBBD"
+                d="M9.573 7.729c.406 0 .784.07 1.126.209.342.14.639.33.881.569.232.227.438.503.614.82a5.1 5.1 0 01.407.949c.097.312.178.654.242 1.016.062.359.105.699.126 1.011.02.307.031.624.031.945 0 .836-.259 1.512-.768 2.01-.504.492-1.17.742-1.98.742H2.748c-.81 0-1.477-.25-1.98-.742C.259 14.76 0 14.084 0 13.248c0-.322.01-.64.032-.945.02-.312.063-.652.126-1.01.063-.363.144-.705.242-1.017.1-.323.238-.643.407-.948.176-.318.382-.594.613-.821.243-.238.54-.43.882-.57.342-.138.72-.208 1.125-.208.16 0 .313.067.61.265.183.123.397.264.636.421.204.134.48.259.822.372.333.11.671.167 1.005.167a3.19 3.19 0 001.006-.167c.341-.113.618-.238.822-.372l.636-.42c.296-.2.45-.266.61-.266zM6.598 0C7.63 0 8.522.38 9.252 1.129s1.1 1.666 1.1 2.724c0 1.06-.37 1.976-1.1 2.725-.73.75-1.623 1.13-2.654 1.13-1.03 0-1.924-.38-2.653-1.13-.73-.749-1.1-1.666-1.1-2.725 0-1.058.37-1.975 1.1-2.724C4.675.379 5.567 0 6.598 0z" />
+            </svg>
+            <input class="calculator__input__number__people__container__number input" type="number" id="people"
+              placeholder="0" min="0">
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="calculator__result">
+        <div class="calculator__result__amount">
+          <div class="calculator__result__amount__title ">
+            <h3>Tip Amount</h3>
+            <p>/ person</p>
+          </div>
+          <div class="calculator__result__amount__number">
+            $4.27
+          </div>
+        </div>
+        <div class="calculator__result__amount">
+          <div class="calculator__result__amount__title">
+            <h3>Total</h3>
+            <p>/ person</p>
+          </div>
+          <div class="calculator__result__amount__number">
+            $32.79
+          </div>
+        </div>
+        <button class="calculator__result__button btn">Reset</button>
+      </div>
+    </section>
+  </main>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+
 </html>
