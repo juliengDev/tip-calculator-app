@@ -1,5 +1,6 @@
 :root {
   --color-SherpaBlue: #00474b;
+  --color-SherpaBlue-light: rgba(0, 71, 75, 0.5);
   --color-Java: #26c2ae;
   --color-CuttyStark: #5e7a7d;
   --color-TowerGray: #9ebbbd;
@@ -70,6 +71,23 @@ button {
 
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #9fe8df;
+    color: var(--color-SherpaBlue);
+  }
+  &:active {
+    background-color: var(--color-Java);
+  }
+  & > input {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+    &:focus {
+      border: 2px solid var(--color-Java);
+      outline: none;
+    }
+  }
 }
 /*
 SPACING SYSTEM (px)

@@ -1,8 +1,11 @@
 .header {
   text-transform: uppercase;
   margin: 5rem 0 4rem;
-  & p {
-    font-size: 2rem;
+  @include respond(tab-port) {
+    margin: 16.3rem auto 8.78rem;
+  }
+  & h1 {
+    font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: 0.8rem;
   }

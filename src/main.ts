@@ -21,6 +21,9 @@ const totalPerPersonOutput = document.getElementById(
 const resetButton = document.querySelector(
   ".calculator__result__button"
 ) as ButtonElement;
+const errorMessageElement = document.querySelector(
+  ".calculator__input__number__people-error"
+) as HTMLElement;
 
 // Application state
 interface CalculatorState {
@@ -45,8 +48,10 @@ const parsePositiveInt = (value: string): number =>
 const calculateTip = (state: CalculatorState) => {
   const tipAmount = state.billAmount * (state.tipPercentage / 100);
   const totalAmount = state.billAmount + tipAmount;
-  const tipPerPerson = tipAmount / state.numberOfPeople;
-  const totalPerPerson = totalAmount / state.numberOfPeople;
+  const tipPerPerson =
+    state.numberOfPeople > 0 ? tipAmount / state.numberOfPeople : 0;
+  const totalPerPerson =
+    state.numberOfPeople > 0 ? totalAmount / state.numberOfPeople : 0;
 
   return {
     tipPerPerson,
@@ -114,7 +119,17 @@ const handleCustomTipInput = (event: Event): void => {
 
 const handlePeopleInput = (event: Event): void => {
   const input = event.target as InputElement;
-  state.numberOfPeople = Math.max(1, parsePositiveInt(input?.value || "1"));
+  const value = parsePositiveInt(input?.value || "0");
+  state.numberOfPeople = Math.max(0, value);
+
+  if (state.numberOfPeople === 0) {
+    errorMessageElement?.classList.remove("hidden");
+    peopleInput?.classList.add("error");
+  } else {
+    errorMessageElement?.classList.add("hidden");
+    peopleInput?.classList.remove("error");
+  }
+
   updateCalculation();
 };
 
@@ -133,6 +148,10 @@ const resetCalculator = (): void => {
   // Reset tip selection
   const buttons = selectionContainer.querySelectorAll("button");
   buttons.forEach((button) => button.classList.remove("selected"));
+
+  // Reset error state
+  errorMessageElement?.classList.add("hidden");
+  peopleInput?.classList.remove("error");
 
   // Update UI
   updateCalculation();

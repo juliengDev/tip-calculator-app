@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="./css/style.css">
   <script type="module" defer src="/src/main.ts"></script>
 
-  <title>Frontend Mentor | Tip calculator app</title>
+  <title>Julien Gilbert | Tip calculator app</title>
 </head>
 
 <body>
   <main class="container grid">
     <header class="header">
-      <p>spli</p>
-      <p>tter</p>
+      <h1>spli</h1>
+      <h1>tter</h1>
     </header>
     <section class="calculator">
       <div class="calculator__input">
@@ -28,23 +28,28 @@
           </div>
         </div>
         <div class="calculator__input__selection">
-          <h3 class="calculator__input__selection__title ft-body-title">Select Tip %</h3>
+          <h2 class="calculator__input__selection__title ft-body-title">Select Tip %</h2>
           <ul class="calculator__input__selection__container">
             <li><button class="calculator__input__selection__pourcentage btn">5%</button></li>
             <li><button class="calculator__input__selection__pourcentage btn">10%</button></li>
             <li><button class="calculator__input__selection__pourcentage btn">15%</button></li>
             <li><button class="calculator__input__selection__pourcentage btn">25%</button></li>
             <li><button class="calculator__input__selection__pourcentage btn">50%</button></li>
-            <li><button class="btn">
+            <li>
+              <div class="btn">
                 <input
                   class="calculator__input__selection__pourcentage calculator__input__selection__pourcentage-custom"
                   id="custom" type="number" placeholder="Custom" min="0">
-              </button>
+              </div>
             </li>
           </ul>
         </div>
         <div class="calculator__input__people">
-          <label class="calculator__input__number__people ft-body-title">Number of People </label>
+          <div class="calculator__input__number__container">
+            <label class="calculator__input__number__people ft-body-title">Number of People </label>
+            <p class="calculator__input__number__people-error hidden">Can't be zero</p>
+          </div>
+
           <div class="calculator__input__people__container">
             <svg class="calculator__input__number__people__container icon " xmlns="http://www.w3.org/2000/svg"
               width="13" height="16">
@@ -62,7 +67,7 @@
           <div class="calculator__result__amount">
 
             <div class="calculator__result__amount__title ">
-              <h3>Tip Amount</h3>
+              <h2>Tip Amount</h2>
               <p>/ person</p>
             </div>
             <div id="tip-per-person" class="calculator__result__amount__number">
@@ -72,7 +77,7 @@
           </div>
           <div class="calculator__result__amount">
             <div class="calculator__result__amount__title">
-              <h3>Total</h3>
+              <h2>Total</h2>
               <p>/ person</p>
             </div>
             <div id="total-per-person" class="calculator__result__amount__number">
@@ -85,10 +90,10 @@
       </div>
     </section>
   </main>
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Julien Gilbert</a>.
-  </div>
+  </footer>
 </body>
 
 </html>
