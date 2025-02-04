@@ -1,93 +1,116 @@
-# Frontend Mentor - Tip calculator app
+# Tip Calculator App
 
-![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Tip Calculator App](./design/desktop-preview.jpg)
 
-## Welcome! 👋
+## Overview
 
-Thanks for checking out this front-end coding challenge.
+This project is a **tip calculator app** designed to help users quickly split bills and calculate tips accurately. Built with **TypeScript**, it ensures precise real-time calculations and a smooth user experience.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+### Key Features
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+- **Real-time tip calculation** based on bill amount, tip percentage, and number of people  
+- **Responsive design** for an optimal experience on all devices  
+- **Interactive UI** with hover and focus states for better usability  
 
-## The challenge
+## How It Works
 
-Your challenge is to build out this tip calculator app and get it looking as close to the design as possible.
+1. **Enter Bill Details**  
+   - Input the total bill amount  
+   - Choose a tip percentage or enter a custom tip  
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+2. **Define Number of People**  
+   - Specify how many people will share the bill  
 
-Your users should be able to:
+3. **Get Instant Calculations**  
+   - The app calculates **tip per person** and **total per person** dynamically  
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Calculate the correct tip and total cost of the bill per person
+4. **Reset Functionality**  
+   - Easily reset all values to start a new calculation  
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## Live Demo
 
-## Where to find everything
+- [Try the Tip Calculator App](https://juliengdev-tip-calculator-app.netlify.app/)  
+- [GitHub Repository](https://github.com/juliengDev/tip-calculator-app)  
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## Built With
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- **TypeScript** for better type safety and maintainability  
+- **Semantic HTML5** for structured and accessible content  
+- **SCSS (BEM methodology)** for organized styling  
+- **Modern JavaScript (ES6+)** for efficient DOM manipulation  
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## What I Learned
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+This project reinforced my understanding of **state management in interactive applications**, even in a **vanilla JavaScript** environment. Key takeaways:
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- **Using TypeScript interfaces** to clearly model data structures  
+- **Separation of concerns** with well-defined functions for calculations, UI updates, and event handling  
+- **Form validation & error handling** to ensure accurate user inputs  
+- **Optimized DOM manipulation** using `querySelector` and `getElementById`  
+- **Practical use of ES6+ features** for a cleaner and more readable codebase  
 
-## Building your project
+### Code Example: Tip Calculation Logic
+```typescript
+const calculateTip = (bill: number, tipPercentage: number, people: number): { tipPerPerson: number, totalPerPerson: number } => {
+  if (bill <= 0 || people <= 0) return { tipPerPerson: 0, totalPerPerson: 0 };
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+  const tipAmount = (bill * tipPercentage) / 100;
+  const totalAmount = bill + tipAmount;
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+  return {
+    tipPerPerson: parseFloat((tipAmount / people).toFixed(2)),
+    totalPerPerson: parseFloat((totalAmount / people).toFixed(2)),
+  };
+};
+```
 
-## Deploying your project
+## Continued Development
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+Planned future enhancements:
+- Dark mode support for improved accessibility
+- Persisting user input between sessions using local storage
+- Keyboard shortcuts for faster calculations
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+## Installation
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+To run this project locally, follow these steps:
 
-## Create a custom `README.md`
+1. **Clone the repository**
+```bash
+git clone https://github.com/juliengDev/tip-calculator-app.git
+cd tip-calculator-app
+```
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+3. **Start the development server**
+```bash
+npm run dev
+```
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+4. **Build for production**
+```bash
+npm run build
+```
 
-## Submitting your solution
+5. **Preview the production build**
+```bash
+npm run preview
+```
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+## Useful Resources
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+- [MDN: JavaScript Number Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) - Helped ensure accurate decimal handling
+- [CSS-Tricks: Responsive Layouts](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Useful for optimizing layout responsiveness
+- [W3C Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - Ensuring accessible and user-friendly interactions
 
-## Sharing your solution
+## Author
 
-There are multiple places you can share your solution:
+- **Portfolio** - [Julien Gilbert](https://juliengilbert.com/)
+- **GitHub** - [@juliengDev](https://github.com/juliengDev)
+- **LinkedIn** - [Julien Gilbert](https://www.linkedin.com/in/julien-gilbert-reactjs/)
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+*Never struggle with splitting a bill again! Try the app and calculate tips effortlessly.* 🚀

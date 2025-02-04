@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/tip-calculator-app/",
+  base: "/",
   build: {
     outDir: "dist",
     assetsDir: "assets",
